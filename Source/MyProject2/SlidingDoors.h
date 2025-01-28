@@ -5,10 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"
+#include "CReceiver.h"
 #include "SlidingDoors.generated.h"
 
 UCLASS()
-class MYPROJECT2_API ASlidingDoors : public AActor
+class MYPROJECT2_API ASlidingDoors : public ACReceiver
 {
 	GENERATED_BODY()
 
@@ -63,7 +64,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 private:
-	UFUNCTION(BlueprintCallable, Category = "Attributes", meta = (DisplayName = "OpenDoor"))
-	void OpenDoor(float deltaTime);
+	void Event(float deltaTime) override;
 
 };

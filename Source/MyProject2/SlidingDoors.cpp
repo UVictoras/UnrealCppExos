@@ -80,10 +80,13 @@ void ASlidingDoors::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	OpenDoor(DeltaTime); 
+	 if (_isEnabled)
+	 	_isOpening = true;
+	 else
+	 	_isOpening = false;
 }
 
-void ASlidingDoors::OpenDoor(float deltaTime)
+void ASlidingDoors::Event(float deltaTime)
 {
 	_deltaTime = deltaTime;
 
