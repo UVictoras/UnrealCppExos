@@ -25,6 +25,12 @@
  
  	Event(DeltaTime);
  
+    if (_emitters.Num() == 0)
+    {
+        _isEnabled = true;
+        return;
+    }
+
  	for (ACEmitter* emitter : _emitters)
  	{
  		if (emitter->_isTriggered == false)

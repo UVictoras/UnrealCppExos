@@ -48,11 +48,11 @@
  
  void APressurePlate::OverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
  {
- 	_isTriggered = true;
+     Super::OverlapBegin(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
  }
  
  void APressurePlate::OverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
  {
- 	_isTriggered = false;
+     Super::OverlapEnd(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex);
  }
 
